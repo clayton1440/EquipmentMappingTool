@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EquipmentMappingTool", "EquipmentMappingTool.vbproj", "{61A118C3-2FAC-412C-8097-CACE60D5238D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EqupmentMappingTool_Setup", "..\EqupmentMappingTool_Setup\EqupmentMappingTool_Setup.vdproj", "{992582C3-FCC8-4004-8332-4BD655203800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A118C3-2FAC-412C-8097-CACE60D5238D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A118C3-2FAC-412C-8097-CACE60D5238D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A118C3-2FAC-412C-8097-CACE60D5238D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A118C3-2FAC-412C-8097-CACE60D5238D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992582C3-FCC8-4004-8332-4BD655203800}.Debug|Any CPU.ActiveCfg = Debug
+		{992582C3-FCC8-4004-8332-4BD655203800}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FB9C357-29C4-4DF2-ABA9-9427DBEBB851}
+	EndGlobalSection
+EndGlobal

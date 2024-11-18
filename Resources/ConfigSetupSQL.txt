@@ -1,0 +1,6 @@
+CREATE TABLE Config (
+	StartMaximized INTEGER DEFAULT 0,
+	LastMapPath TEXT DEFAULT '',
+	ExpireDays INTEGER DEFAULT 7,
+	ExpiredCellForecolor INTEGER DEFAULT -65536
+);

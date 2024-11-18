@@ -1,0 +1,70 @@
+CREATE TABLE Map (
+	Name TEXT NOT NULL,
+	Height INTEGER NOT NULL,
+	Width INTEGER NOT NULL
+);
+
+CREATE TABLE Area (
+	ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NOT NULL,
+	Color TEXT NOT NULL,
+	CanHoldItems INTEGER NOT NULL DEFAULT 1
+);
+
+CREATE TABLE Layout (
+	ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	Row INTEGER NOT NULL,
+	Column INTEGER NOT NULL,
+	AreaID INTEGER NOT NULL
+);
+
+CREATE TABLE Item (
+	ID TEXT PRIMARY KEY UNIQUE,
+	Name TEXT,
+	Row INTEGER NOT NULL,
+	Column INTEGER NOT NULL,
+	ExpDate TEXT,
+	User TEXT,
+	Notes TEXT
+);
+
+CREATE TABLE Storage (
+	ID TEXT PRIMARY KEY UNIQUE,
+	Name TEXT,
+	ExpDate TEXT,
+	User TEXT,
+	Notes TEXT
+);
+
+CREATE TABLE MergedCells (
+	ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	Row1 INTEGER NOT NULL,
+	Col1 INTEGER NOT NULL,
+	Row2 INTEGER NOT NULL,
+	Col2 INTEGER NOT NULL
+);
+
+CREATE VIEW AllItems AS
+SELECT 
+    ID,
+    Name,
+    Row,
+    Column,
+    ExpDate,
+    User,
+    Notes
+FROM 
+    Item
+
+UNION ALL
+
+SELECT 
+    ID,
+    Name,
+    NULL AS Row,
+    NULL AS Column,
+    ExpDate,
+    User,
+    Notes
+FROM 
+    Storage;
