@@ -403,6 +403,7 @@ Public Class MapForm
 	Private Sub MapGrid_CellDoubleClicked(sender As Object, e As MapControl.CellEventArgs) Handles MapGrid.CellDoubleClicked
 		ClickPoint = New Point(e.Column, e.Row)
 
+		If MapSetupButton.Checked Then Exit Sub
 		If Not GridPoints.ContainsKey(ClickPoint) Then Exit Sub
 		If Not Areas.ContainsKey(GridPoints(ClickPoint).AreaID) Then Exit Sub
 
