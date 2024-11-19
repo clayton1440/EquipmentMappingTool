@@ -70,9 +70,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MapGrid">
-      <HintPath>C:\Users\cgross\VSProjects\source\repos\MapGrid\bin\Release\MapGrid.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -113,6 +110,12 @@
     </Compile>
     <Compile Include="IdentifyItemsForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapControl.Designer.vb">
+      <DependentUpon>MapControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MapControl.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MapForm.vb">
       <SubType>Form</SubType>
@@ -168,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IdentifyItemsForm.resx">
       <DependentUpon>IdentifyItemsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapControl.resx">
+      <DependentUpon>MapControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapForm.resx">
       <DependentUpon>MapForm.vb</DependentUpon>

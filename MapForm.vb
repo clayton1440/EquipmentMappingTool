@@ -296,7 +296,7 @@ Public Class MapForm
 
 	Private ClickPoint As Point = Nothing
 
-	Private Sub MapGrid_CellMouseHover(sender As Object, e As MapGrid.MapGrid.CellEventArgs) Handles MapGrid.CellMouseHover
+	Private Sub MapGrid_CellMouseHover(sender As Object, e As MapControl.CellEventArgs) Handles MapGrid.CellMouseHover
 		HoveredCellLabel.Text = $"X: {e.Column}     Y: {e.Row}"
 		AreaHoverLabel.Text = $"A: {If(GridPoints.ContainsKey(New Point(e.Column, e.Row)), Areas(GridPoints(New Point(e.Column, e.Row)).AreaID).Name & If(Areas(GridPoints(New Point(e.Column, e.Row)).AreaID).CanHoldItems, " ▣", " ▢"), "None ▢")}"
 
@@ -400,7 +400,7 @@ Public Class MapForm
 
 	End Sub
 
-	Private Sub MapGrid_CellDoubleClicked(sender As Object, e As MapGrid.MapGrid.CellEventArgs) Handles MapGrid.CellDoubleClicked
+	Private Sub MapGrid_CellDoubleClicked(sender As Object, e As MapControl.CellEventArgs) Handles MapGrid.CellDoubleClicked
 		ClickPoint = New Point(e.Column, e.Row)
 
 		If Not GridPoints.ContainsKey(ClickPoint) Then Exit Sub
@@ -412,7 +412,7 @@ Public Class MapForm
 	End Sub
 
 	Private RightClickArea As Area = Nothing
-	Private Sub MapGrid_CellRightClicked(sender As Object, e As MapGrid.MapGrid.CellEventArgs) Handles MapGrid.CellRightClicked
+	Private Sub MapGrid_CellRightClicked(sender As Object, e As MapControl.CellEventArgs) Handles MapGrid.CellRightClicked
 		RightClickArea = If(GridPoints.ContainsKey(New Point(e.Column, e.Row)), Areas(GridPoints(New Point(e.Column, e.Row)).AreaID), Nothing)
 
 		SelectedCellLabel.Text = $"X: {e.Column}     Y: {e.Row}"
@@ -478,7 +478,7 @@ Public Class MapForm
 			LoadMap()
 		End If
 	End Sub
-	Private Sub MapGrid_CellClicked(sender As Object, e As MapGrid.MapGrid.CellEventArgs) Handles MapGrid.CellClicked
+	Private Sub MapGrid_CellClicked(sender As Object, e As MapControl.CellEventArgs) Handles MapGrid.CellClicked
 		SelectedCellLabel.Text = $"X: {e.Column}     Y: {e.Row}"
 		SelectedAreaLabel.Text = $"A: {If(GridPoints.ContainsKey(New Point(e.Column, e.Row)), Areas(GridPoints(New Point(e.Column, e.Row)).AreaID).Name & If(Areas(GridPoints(New Point(e.Column, e.Row)).AreaID).CanHoldItems, " ▣", " ▢"), "None ▢")}"
 

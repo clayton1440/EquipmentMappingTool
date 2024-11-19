@@ -43,6 +43,7 @@ Partial Class FindItemForm
 		'
 		'ItemID
 		'
+		Me.ItemID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
 		Me.ItemID.Location = New System.Drawing.Point(12, 31)
 		Me.ItemID.Name = "ItemID"
 		Me.ItemID.Size = New System.Drawing.Size(114, 20)

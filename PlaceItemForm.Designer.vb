@@ -71,6 +71,7 @@ Partial Class PlaceItemForm
 		'
 		'ItemID
 		'
+		Me.ItemID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
 		Me.ItemID.Location = New System.Drawing.Point(12, 29)
 		Me.ItemID.Name = "ItemID"
 		Me.ItemID.Size = New System.Drawing.Size(93, 20)

@@ -45,6 +45,8 @@ Partial Class MapForm
 		Me.ShrinkAreaButton = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MergeCellsButton = New System.Windows.Forms.ToolStripMenuItem()
 		Me.UnmergeCellsButton = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.ExitSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExpiringItemsPage = New System.Windows.Forms.TabPage()
 		Me.DGV_ExpiringItems = New System.Windows.Forms.DataGridView()
 		Me.GridContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -60,6 +62,7 @@ Partial Class MapForm
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.ExpiringItemCount = New System.Windows.Forms.Label()
+		Me.MapGrid = New MapControl()
 		Me.TabControl1 = New System.Windows.Forms.TabControl()
 		Me.StoredItemsPage = New System.Windows.Forms.TabPage()
 		Me.DGV_StoredItems = New System.Windows.Forms.DataGridView()
@@ -75,9 +78,6 @@ Partial Class MapForm
 		Me.SelectedAreaLabel = New System.Windows.Forms.ToolStripStatusLabel()
 		Me.SelectedCellLabel = New System.Windows.Forms.ToolStripStatusLabel()
 		Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-		Me.ExitSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.MapGrid = New MapGrid.MapGrid()
 		Me.MapContext.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.ExpiringItemsPage.SuspendLayout()
@@ -179,14 +179,14 @@ Partial Class MapForm
 		'
 		Me.FindToolStripMenuItem.Name = "FindToolStripMenuItem"
 		Me.FindToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-		Me.FindToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+		Me.FindToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.FindToolStripMenuItem.Text = "Find"
 		'
 		'MapSetupButton
 		'
 		Me.MapSetupButton.CheckOnClick = True
 		Me.MapSetupButton.Name = "MapSetupButton"
-		Me.MapSetupButton.Size = New System.Drawing.Size(135, 22)
+		Me.MapSetupButton.Size = New System.Drawing.Size(180, 22)
 		Me.MapSetupButton.Text = "Map Setup"
 		'
 		'AreaToolStripMenuItem
@@ -239,6 +239,7 @@ Partial Class MapForm
 		Me.MergeCellsButton.Name = "MergeCellsButton"
 		Me.MergeCellsButton.Size = New System.Drawing.Size(180, 22)
 		Me.MergeCellsButton.Text = "Merge Cells"
+		Me.MergeCellsButton.Visible = False
 		'
 		'UnmergeCellsButton
 		'
@@ -246,6 +247,18 @@ Partial Class MapForm
 		Me.UnmergeCellsButton.Name = "UnmergeCellsButton"
 		Me.UnmergeCellsButton.Size = New System.Drawing.Size(180, 22)
 		Me.UnmergeCellsButton.Text = "Unmerge Cells"
+		Me.UnmergeCellsButton.Visible = False
+		'
+		'ToolStripSeparator1
+		'
+		Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+		Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+		'
+		'ExitSetupToolStripMenuItem
+		'
+		Me.ExitSetupToolStripMenuItem.Name = "ExitSetupToolStripMenuItem"
+		Me.ExitSetupToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ExitSetupToolStripMenuItem.Text = "Exit Setup"
 		'
 		'ExpiringItemsPage
 		'
@@ -410,6 +423,26 @@ Partial Class MapForm
 		Me.ExpiringItemCount.Text = "0"
 		Me.ExpiringItemCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
+		'MapGrid
+		'
+		Me.MapGrid.AutoScroll = True
+		Me.MapGrid.AutoScrollMinSize = New System.Drawing.Size(120, 120)
+		Me.MapGrid.BackColor = System.Drawing.SystemColors.ControlDark
+		Me.MapGrid.CellDefaultBackColor = System.Drawing.SystemColors.Control
+		Me.MapGrid.CellSize = 12
+		Me.MapGrid.Columns = 10
+		Me.MapGrid.Cursor = System.Windows.Forms.Cursors.Cross
+		Me.MapGrid.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.MapGrid.DrawBorder = False
+		Me.MapGrid.HighlightPoints = CType(resources.GetObject("MapGrid.HighlightPoints"), System.Collections.Generic.List(Of System.Drawing.Point))
+		Me.MapGrid.Location = New System.Drawing.Point(0, 0)
+		Me.MapGrid.Margin = New System.Windows.Forms.Padding(0)
+		Me.MapGrid.Name = "MapGrid"
+		Me.MapGrid.Rows = 10
+		Me.MapGrid.ShowGridlines = False
+		Me.MapGrid.Size = New System.Drawing.Size(1000, 517)
+		Me.MapGrid.TabIndex = 3
+		'
 		'TabControl1
 		'
 		Me.TabControl1.Controls.Add(Me.MapPage)
@@ -571,38 +604,7 @@ Partial Class MapForm
 		Me.ToolTip1.InitialDelay = 250
 		Me.ToolTip1.ReshowDelay = 100
 		'
-		'ToolStripSeparator1
-		'
-		Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-		Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
-		'
-		'ExitSetupToolStripMenuItem
-		'
-		Me.ExitSetupToolStripMenuItem.Name = "ExitSetupToolStripMenuItem"
-		Me.ExitSetupToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-		Me.ExitSetupToolStripMenuItem.Text = "Exit Setup"
-		'
-		'MapGrid
-		'
-		Me.MapGrid.AutoScroll = True
-		Me.MapGrid.AutoScrollMinSize = New System.Drawing.Size(120, 120)
-		Me.MapGrid.BackColor = System.Drawing.SystemColors.ControlDark
-		Me.MapGrid.CellDefaultBackColor = System.Drawing.SystemColors.Control
-		Me.MapGrid.CellSize = 12
-		Me.MapGrid.Columns = 10
-		Me.MapGrid.Cursor = System.Windows.Forms.Cursors.Cross
-		Me.MapGrid.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.MapGrid.DrawBorder = False
-		Me.MapGrid.HighlightPoints = CType(resources.GetObject("MapGrid.HighlightPoints"), System.Collections.Generic.List(Of System.Drawing.Point))
-		Me.MapGrid.Location = New System.Drawing.Point(0, 0)
-		Me.MapGrid.Margin = New System.Windows.Forms.Padding(0)
-		Me.MapGrid.Name = "MapGrid"
-		Me.MapGrid.Rows = 10
-		Me.MapGrid.ShowGridlines = False
-		Me.MapGrid.Size = New System.Drawing.Size(1000, 517)
-		Me.MapGrid.TabIndex = 3
-		'
-		'Map
+		'MapForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
@@ -614,7 +616,7 @@ Partial Class MapForm
 		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.KeyPreview = True
 		Me.MainMenuStrip = Me.MenuStrip1
-		Me.Name = "Map"
+		Me.Name = "MapForm"
 		Me.Text = "Equipment Mapping Tool"
 		Me.MapContext.ResumeLayout(False)
 		Me.MenuStrip1.ResumeLayout(False)
@@ -655,7 +657,7 @@ Partial Class MapForm
 	Friend WithEvents Label4 As Label
 	Friend WithEvents TabControl1 As TabControl
 	Friend WithEvents AllItemsPage As TabPage
-	Friend WithEvents MapGrid As MapGrid.MapGrid
+	Friend WithEvents MapGrid As MapControl
 	Friend WithEvents StatusBar As StatusStrip
 	Friend WithEvents StatusLabel As ToolStripStatusLabel
 	Friend WithEvents AreaToolStripMenuItem As ToolStripMenuItem
